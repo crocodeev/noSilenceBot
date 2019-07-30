@@ -1,0 +1,20 @@
+{
+  "name": "no_silence_bot",
+  "version": "1.0.0",
+  "description": "bot that receives message from PizaCZ  Silence Detector and send it to chat",
+  "main": "index.js",
+  "scripts": {
+    "test": "start"
+  },
+  "author": "crocodeev",
+  "license": "ISC",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.30.0",
+    "save-dev": "^2.0.0"
+  },
+  "devDependencies": {
+    "express": "^4.16.4",
+    "multer": "^1.4.1",
+    "node-emoji": "^1.10.0"
+  }
+}
