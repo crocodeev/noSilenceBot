@@ -34,7 +34,7 @@ function emo (message) {
 
 function format (place, time, message){
   let picture = emo(message);
-  return phrase = picture+place+message+
+  return phrase = picture+place+message;
 }
 
 module.exports.emo = emo;
