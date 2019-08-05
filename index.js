@@ -1,6 +1,6 @@
 //addition
 
-const emoji = require('node-emoji').emoji;
+const messageHandler = require('./custoModules/messageHandler');
 
 //module for work with buffer body
 
@@ -42,40 +42,64 @@ app.listen(3000, () => {
 
 //app.use(fileUpload());
 
+//get
+
 app.get('/nosilence/spb/', (req,res) => {
-  console.log(req.query);
   res.send("sended to spb chat");
-  let message = (req.query.date + " " + req.query.name + " " + req.query.music);
-  bot.sendMessage(spbChatID,(emoji.sos +  message));
-  bot.sendMessage(hitchChatID, (emoji.sos + message));
+  let message = messageHandler.format(req.query.name, req.query.date, req.query.music);
+  bot.sendMessage(spbChatID, message);
+  bot.sendMessage(hitchChatID, message);
 })
 
 
 app.get('/nosilence/msk/', (req,res) => {
-  console.log(req.query);
   res.send("sended to msk chat");
-  let message = (req.query.date + " " + req.query.name + " " + req.query.music);
-  bot.sendMessage(mskChatID,(emoji.sos + " " +  message));
-  bot.sendMessage(hitchChatID, (emoji.sos + message));
+  let message = messageHandler.format(req.query.name, req.query.date, req.query.music);
+  bot.sendMessage(mskChatID, message);
+  bot.sendMessage(hitchChatID, message);
 })
 
 app.get('/nosilence/test/', (req,res) => {
-  console.log(req.query);
   res.send("sended to test");
-  let message = (req.query.date + " " + req.query.name + " " + req.query.music);
-  bot.sendMessage(testChatID, (emoji.sos + " " + message));
+  let message = messageHandler.format(req.query.name, req.query.date, req.query.music);
+  bot.sendMessage(testChatID, message);
 })
+
+//post
 
 app.post('/nosilence/screenshot/', upload.single('screenshot'), (req,res) => {
 
-  let message = emoji.heart + " " + req.body.what + " " + req.body.where + " " +req.body.when;
+  let message = messageHandler.format(req.query.name, req.query.date, req.query.music);
 
   let screenshot = req.file.buffer;
 
   bot.sendPhoto(testChatID, screenshot, {caption: message});
 
-	res.send("sended");		
+	res.send("sended");
 })
+
+app.post('/nosilence/screenshotSPB/', upload.single('screenshot'), (req,res) => {
+
+  let message = messageHandler.format(req.query.name, req.query.date, req.query.music);
+
+  let screenshot = req.file.buffer;
+
+  bot.sendPhoto(testChatID, screenshot, {caption: message});
+
+	res.send("sended");
+})
+
+app.post('/nosilence/screenshotMSK/', upload.single('screenshot'), (req,res) => {
+
+  let message = messageHandler.format(req.query.name, req.query.date, req.query.music);
+
+  let screenshot = req.file.buffer;
+
+  bot.sendPhoto(testChatID, screenshot, {caption: message});
+
+	res.send("sended");
+})
+
 
 /*bot.on('message', (msg) =>{
   console.log(msg.chat.id);
