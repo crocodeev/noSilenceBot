@@ -15,8 +15,17 @@ function emo (message) {
     case 'ALARM:NO SOUND':
       picture = emoji.sos;
       break;
-    case 'ALARM:NO SOUND':
+    case 'ALARM: NO SOUND':
       picture = emoji.sos;
+      break;
+    case 'NO SOUND':
+      picture = emoji.sos;
+      break;
+    case 'ATTENTION: NO SOUND':
+      picture = emoji.sos;
+      break;
+    case 'SOUND OK':
+      picture = emoji.loud_sound;
       break;
     case 'HIGH TEMPERATURE':
       picture = emoji.thermometer;
@@ -34,7 +43,7 @@ function emo (message) {
 
 function format (place, time, message){
   let picture = emo(message);
-  return phrase = picture+place+message;
+  return phrase = picture + " " + place + " " + message;
 }
 
 module.exports.emo = emo;
