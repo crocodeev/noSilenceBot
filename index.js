@@ -28,10 +28,6 @@ const bot = new TelegramBot(token, botOptions);
 
 //server
 
-let spbChatID = -1001102290205;
-let mskChatID = -286669630;
-let hitchChatID = -381212262;
-let testChatID = 50444513;
 
 const express = require('express');
 const app = express();
@@ -47,22 +43,22 @@ app.listen(3000, () => {
 app.get('/nosilence/spb/', (req,res) => {
   res.send("sended to spb chat");
   let message = messageHandler.format(req.query.name, req.query.date, req.query.music);
-  bot.sendMessage(spbChatID, message);
-  bot.sendMessage(hitchChatID, message);
+  bot.sendMessage(settings.spbChatID, message);
+  bot.sendMessage(settings.hitchChatID, message);
 })
 
 
 app.get('/nosilence/msk/', (req,res) => {
   res.send("sended to msk chat");
   let message = messageHandler.format(req.query.name, req.query.date, req.query.music);
-  bot.sendMessage(mskChatID, message);
-  bot.sendMessage(hitchChatID, message);
+  bot.sendMessage(settings.mskChatID, message);
+  bot.sendMessage(settings.hitchChatID, message);
 })
 
 app.get('/nosilence/test/', (req,res) => {
   res.send("sended to test");
   let message = messageHandler.format(req.query.name, req.query.date, req.query.music);
-  bot.sendMessage(testChatID, message);
+  bot.sendMessage(settings.testChatID, message);
 })
 
 //post
@@ -73,7 +69,7 @@ app.post('/nosilence/screenshot/', upload.single('screenshot'), (req,res) => {
 
   let screenshot = req.file.buffer;
 
-  bot.sendPhoto(testChatID, screenshot, {caption: message});
+  bot.sendPhoto(settings.testChatID, screenshot, {caption: message});
 
 	res.send("sended");
 })
