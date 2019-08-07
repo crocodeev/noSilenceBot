@@ -57,10 +57,7 @@ app.get('/nosilence/msk/', (req,res) => {
 
 app.get('/nosilence/test/', (req,res) => {
   res.send("sended to test");
-  console.log(req.query);
-  console.log(req.query.name);
-  console.log(req.query.date);
-  console.log(req.query.music);
+
   let message = messageHandler.format(req.query.name, req.query.date, req.query.music);
   bot.sendMessage(settings.testChatID, message);
 })
@@ -69,11 +66,7 @@ app.get('/nosilence/test/', (req,res) => {
 
 app.post('/nosilence/screenshot/', upload.single('screenshot'), (req,res) => {
 
-  console.log(req.body.where);
-  console.log(req.body.when);
-  console.log(req.body.what);
-
-  let message = messageHandler.format(req.query.where, req.query.when, req.query.what);
+  let message = messageHandler.format(req.body.where, req.body.when, req.body.what);
 
   let screenshot = req.file.buffer;
 
@@ -84,7 +77,7 @@ app.post('/nosilence/screenshot/', upload.single('screenshot'), (req,res) => {
 
 app.post('/nosilence/screenshotSPB/', upload.single('screenshot'), (req,res) => {
 
-  let message = messageHandler.format(req.query.name, req.query.date, req.query.music);
+  let message = messageHandler.format(req.body.where, req.body.when, req.body.what);
 
   let screenshot = req.file.buffer;
 
@@ -95,7 +88,7 @@ app.post('/nosilence/screenshotSPB/', upload.single('screenshot'), (req,res) => 
 
 app.post('/nosilence/screenshotMSK/', upload.single('screenshot'), (req,res) => {
 
-  let message = messageHandler.format(req.query.name, req.query.date, req.query.music);
+  let message = messageHandler.format(req.body.where, req.body.when, req.body.what);
 
   let screenshot = req.file.buffer;
 
