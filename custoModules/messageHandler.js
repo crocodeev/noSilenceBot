@@ -43,7 +43,7 @@ function emo (message) {
 
 function format (place, time, message){
   let picture = emo(message);
-  return phrase = picture + " " + place + " " + message + " " + date;
+  return phrase = picture + " " + place + " " + message + " " + time;
 }
 
 module.exports.emo = emo;
