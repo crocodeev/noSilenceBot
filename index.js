@@ -69,10 +69,9 @@ app.get('/nosilence/test/', (req,res) => {
 
 app.post('/nosilence/screenshot/', upload.single('screenshot'), (req,res) => {
 
-  console.log(req);
-  console.log(req.query.where);
-  console.log(req.query.when);
-  console.log(req.query.what);
+  console.log(req.body.where);
+  console.log(req.body.when);
+  console.log(req.body.what);
 
   let message = messageHandler.format(req.query.where, req.query.when, req.query.what);
 
