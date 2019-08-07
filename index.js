@@ -57,6 +57,10 @@ app.get('/nosilence/msk/', (req,res) => {
 
 app.get('/nosilence/test/', (req,res) => {
   res.send("sended to test");
+  console.log(req.query);
+  console.log(req.query.name);
+  console.log(req.query.date);
+  console.log(req.query.music);
   let message = messageHandler.format(req.query.name, req.query.date, req.query.music);
   bot.sendMessage(settings.testChatID, message);
 })
@@ -64,6 +68,11 @@ app.get('/nosilence/test/', (req,res) => {
 //post
 
 app.post('/nosilence/screenshot/', upload.single('screenshot'), (req,res) => {
+
+  console.log(req.query);
+  console.log(req.query.where);
+  console.log(req.query.when);
+  console.log(req.query.what);
 
   let message = messageHandler.format(req.query.where, req.query.when, req.query.what);
 
