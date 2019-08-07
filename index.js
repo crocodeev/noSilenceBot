@@ -65,7 +65,7 @@ app.get('/nosilence/test/', (req,res) => {
 
 app.post('/nosilence/screenshot/', upload.single('screenshot'), (req,res) => {
 
-  let message = messageHandler.format(req.query.name, req.query.date, req.query.music);
+  let message = messageHandler.format(req.query.where, req.query.when, req.query.what);
 
   let screenshot = req.file.buffer;
 
