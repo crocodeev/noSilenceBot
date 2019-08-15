@@ -81,7 +81,7 @@ app.post('/nosilence/screenshotSPB/', upload.single('screenshot'), (req,res) => 
 
   let screenshot = req.file.buffer;
 
-  bot.sendPhoto(testChatID, screenshot, {caption: message});
+  bot.sendPhoto(settings.spbChatID, screenshot, {caption: message});
 
 	res.send("sended");
 })
@@ -92,7 +92,7 @@ app.post('/nosilence/screenshotMSK/', upload.single('screenshot'), (req,res) => 
 
   let screenshot = req.file.buffer;
 
-  bot.sendPhoto(testChatID, screenshot, {caption: message});
+  bot.sendPhoto(settings.mskChatID, screenshot, {caption: message});
 
 	res.send("sended");
 })
