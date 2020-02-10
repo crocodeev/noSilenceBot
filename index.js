@@ -62,6 +62,16 @@ app.get('/nosilence/test/', (req,res) => {
   bot.sendMessage(settings.testChatID, message);
 })
 
+  // for hitch "http://sound.inplay.space/temass/?remote={$remote}"
+
+app.get('/temass/', (req,res) => {
+  res.sendStatus(200);
+
+  let message = req.query.remote;
+  bot.sendMessage(settings.temassChatId, message);
+
+  })
+
 //post
 
 app.post('/nosilence/screenshot/', upload.single('screenshot'), (req,res) => {
