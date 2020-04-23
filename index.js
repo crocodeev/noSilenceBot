@@ -1,10 +1,4 @@
 
-//module for work with buffer body
-
-const multer = require('multer');
-
-const upload = multer();
-
 //bot
 
 const settings = require('./settings');
