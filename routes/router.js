@@ -68,4 +68,4 @@ router.post('/screenshotMSK/', upload.single('screenshot'), (req,res) => {
 
 
 
-module.export = router;
+module.exports = router;
