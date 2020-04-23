@@ -11,4 +11,4 @@ bot.sendMessage(settings.temassChatID, message);
 
 })
 
-module.exports = hitchRouter;
+module.exports = router;
