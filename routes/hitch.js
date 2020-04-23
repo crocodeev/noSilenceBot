@@ -1,5 +1,5 @@
 const bot = require('../telegram/bot');
-const setting = require('../settings');
+const settings = require('../settings');
 
 const {Router} = require('express');
 const router = Router();
