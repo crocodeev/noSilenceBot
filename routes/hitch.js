@@ -1,7 +1,9 @@
 const bot = require('../telegram/bot');
 
+const {Router} = require('express');
+const router = Router();
 
-app.get('/temass/', (req,res) => {
+router.get('/temass/', (req,res) => {
 res.sendStatus(200);
 
 let message = req.query.remote;
