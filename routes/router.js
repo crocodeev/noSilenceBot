@@ -1,4 +1,4 @@
-const messageHandler = require('./custoModules/messageHandler');
+const messageHandler = require('../custoModules/messageHandler');
 const {Router} = require('express');
 const router = Router();
 
