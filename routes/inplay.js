@@ -69,4 +69,4 @@ router.post('/screenshotMSK/', upload.single('screenshot'), (req,res) => {
 
 
 
-module.exports = router;
+module.exports = inplayRouter;

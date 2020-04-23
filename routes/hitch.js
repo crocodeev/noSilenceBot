@@ -10,3 +10,5 @@ let message = req.query.remote;
 bot.sendMessage(settings.temassChatID, message);
 
 })
+
+module.exports = hitchRouter;
