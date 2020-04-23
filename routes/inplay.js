@@ -15,14 +15,14 @@ router.get('/spb/', (req,res) => {
   res.send("sended to spb chat");
   let message = messageHandler.format(req.query.name, req.query.date, req.query.music);
   bot.sendMessage(settings.spbChatID, message);
-  bot.sendMessage(settings.hitchChatID, message);
+  //bot.sendMessage(settings.hitchChatID, message);
 })
 
 router.get('/msk/', (req,res) => {
   res.send("sended to msk chat");
   let message = messageHandler.format(req.query.name, req.query.date, req.query.music);
   bot.sendMessage(settings.mskChatID, message);
-  bot.sendMessage(settings.hitchChatID, message);
+  //bot.sendMessage(settings.hitchChatID, message);
 })
 
 router.get('/test/', (req,res) => {

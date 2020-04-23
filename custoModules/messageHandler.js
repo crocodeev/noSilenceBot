@@ -35,6 +35,7 @@ function emo (message) {
       break;
     case 'CONNECTION LOST':
       picture = emoji.satellite;
+      break;
     default:
       picture = emoji.eggplant;
   }
