@@ -33,7 +33,10 @@ function emo (message) {
     case 'LOW DISK SPACE':
       picture = emoji.floppy_disk;
       break;
-    case 'CONNECTION LOST':
+    case 'LOST CONNECTION':
+      picture = emoji.satellite_antenna;
+      break;
+    case 'CONNECTION RESTORED':
       picture = emoji.satellite;
       break;
     default:
