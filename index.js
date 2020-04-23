@@ -1,19 +1,4 @@
 
-//bot
-
-const settings = require('./settings');
-
-const token = settings.token;
-const botOptions = {
-  polling: true,
-  request: {
-    proxy:"http://localhost:8118"
-  }
-};
-
-const TelegramBot = require('node-telegram-bot-api');
-
-const bot = new TelegramBot(token, botOptions);
 
 //server
 
@@ -21,17 +6,9 @@ const bot = new TelegramBot(token, botOptions);
 const express = require('express');
 const app = express();
 
-app.use('/nosilence', require('./routes/router.js'));
+app.use('/nosilence', require('./routes/rms_router.js'));
 
-// for hitch "http://sound.inplay.space/temass/?remote={$remote}"
-
-app.get('/temass/', (req,res) => {
-res.sendStatus(200);
-
-let message = req.query.remote;
-bot.sendMessage(settings.temassChatID, message);
-
-})
+app.use('/', require('./routes/hitch_router.js'))
 
 
 app.listen(3000, () => {
