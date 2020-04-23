@@ -1,5 +1,5 @@
 const messageHandler = require('../custoModules/messageHandler');
-
+const settings = require('../settings');
 const bot = require('../telegram/bot');
 
 //module for work with buffer body
