@@ -40,7 +40,7 @@ function emo (message) {
       picture = emoji.satellite;
       break;
     case 'UPTIME EXCEEDED':
-      picture = emoji.satellite;
+      picture = emoji.hourglass_flowing_sand;
       break;
     default:
       picture = emoji.eggplant;
