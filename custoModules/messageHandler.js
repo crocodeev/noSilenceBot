@@ -39,6 +39,9 @@ function emo (message) {
     case 'CONNECTION RESTORED':
       picture = emoji.satellite;
       break;
+    case 'UPTIME EXCEEDED':
+      picture = emoji.satellite;
+      break;
     default:
       picture = emoji.eggplant;
   }
