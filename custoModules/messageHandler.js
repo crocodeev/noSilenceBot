@@ -42,6 +42,12 @@ function emo (message) {
     case 'UPTIME EXCEEDED':
       picture = emoji.hourglass_flowing_sand;
       break;
+    case 'FIREWALL DISABLED':
+      picture = emoji.shield;
+      break;
+    case 'FIREWALL ENABLED':
+      picture = emoji.shield;
+      break;
     default:
       picture = emoji.eggplant;
   }
