@@ -60,6 +60,12 @@ function emo (message) {
     case 'DEFENDER OK':
       picture = emoji.star;
       break;
+    case 'PIRA OFF':
+      picture = emoji.black_circle;
+      break;
+    case 'PIRA ON':
+      picture = emoji.white_circle;
+      break;
     default:
       picture = emoji.eggplant;
   }
