@@ -48,6 +48,18 @@ function emo (message) {
     case 'FIREWALL ENABLED':
       picture = emoji.shield;
       break;
+    case 'ACTIVATION PROBLEM':
+      picture = emoji.red_circle";
+      break;
+    case 'ACTIVATION OK':
+      picture = emoji.large_blue_circle";
+      break;
+    case 'DEFENDER DISABLED':
+      picture = emoji.rotating_light";
+      break;
+    case 'DEFENDER OK':
+      picture = emoji.star";
+      break;
     default:
       picture = emoji.eggplant;
   }
