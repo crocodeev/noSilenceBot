@@ -30,6 +30,9 @@ function emo (message) {
     case 'HIGH TEMPERATURE':
       picture = emoji.thermometer;
       break;
+    case 'CRITICAL TEMPERATURE':
+      picture = emoji.fire;
+      break;
     case 'LOW DISK SPACE':
       picture = emoji.floppy_disk;
       break;
