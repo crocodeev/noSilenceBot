@@ -48,6 +48,9 @@ function emo (message) {
     case 'UPTIME EXCEEDED':
       picture = emoji.hourglass_flowing_sand;
       break;
+    case 'UPTIME RESTORED':
+      picture = emoji.hourglass;
+      break;
     case 'FIREWALL DISABLED':
       picture = emoji.shield;
       break;
@@ -71,6 +74,24 @@ function emo (message) {
       break;
     case 'PIRA ON':
       picture = emoji.white_circle;
+      break;
+    case 'MEMORY HIGH LOAD':
+      picture = emoji.minidisc;
+      break;
+    case 'MEMORY OK':
+      picture = emoji.floppy_disk;
+      break;
+    case 'CPU HIGH LOAD':
+      picture = emoji.computer;
+      break;
+    case 'CPU OK':
+      picture = emoji.desktop_computer;
+      break;
+    case 'DISK IS FULL':
+      picture = emoji.dvd;
+      break;
+    case 'DISK IS OK':
+      picture = emoji.cd;
       break;
     default:
       picture = emoji.eggplant;
