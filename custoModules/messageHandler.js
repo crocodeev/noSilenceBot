@@ -82,10 +82,10 @@ function emo (message) {
       picture = emoji.floppy_disk;
       break;
     case 'CPU HIGH LOAD':
-      picture = emoji.computer;
+      picture = emoji.black_large_square;
       break;
     case 'CPU OK':
-      picture = emoji.desktop_computer;
+      picture = emoji.white_large_square;
       break;
     case 'DISK IS FULL':
       picture = emoji.dvd;
