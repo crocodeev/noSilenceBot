@@ -19,4 +19,4 @@ function rbCheckMessageHandler(object) {
 
 }
 
-module.exports.format = rbCheckMessageHandler;
+module.exports.rbCheckMessageHandler = rbCheckMessageHandler;
