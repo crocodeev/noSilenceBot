@@ -39,7 +39,7 @@ router.post('/test/', (req,res) => {
 
   console.log(req.body);
 
-  let message = req.body;
+  let message = req.body.test;
   bot.sendMessage(settings.testChatID, message);
 })
 
