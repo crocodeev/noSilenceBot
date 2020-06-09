@@ -1,5 +1,6 @@
 function rbCheckMessageHandler(object) {
 
+  console.log(object);
   let strings = object.strings;
   let message;
 
@@ -17,6 +18,6 @@ function rbCheckMessageHandler(object) {
 
   return message;
 
-}
+};
 
 module.exports.rbCheckMessageHandler = rbCheckMessageHandler;
