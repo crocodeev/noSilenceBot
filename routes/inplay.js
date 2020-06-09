@@ -38,14 +38,23 @@ router.post('/test/', (req,res) => {
   res.send("sended to test");
 
   let strings = req.body.strings;
-  console.log(typeof strings[0]);
   let message;
 
+  message = message + req.body.name;
+  message = message + "\n" + req.body.message;
+  message = message + "\n";
+
   strings.forEach((item) => {
-    message = message + "\n" + "item";
+    message = message + "\n" + item;
   });
+
+  message = message + "\n";
+  message = message + "\n" + req.body.total;
+  message = message + "\n" + req.body.timing;
+
   bot.sendMessage(settings.testChatID, message);
 })
+
 
 router.post('/screenshot/', upload.single('screenshot'), (req,res) => {
 
