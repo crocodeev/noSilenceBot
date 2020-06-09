@@ -1,4 +1,5 @@
 const messageHandler = require('../custoModules/messageHandler');
+const rbCheckMessageHandler = require('../custoModules/rbCheckMessageHandler');
 const settings = require('../settings');
 const bot = require('../telegram/bot');
 
@@ -37,20 +38,8 @@ router.get('/test/', (req,res) => {
 router.post('/test/', (req,res) => {
   res.send("sended to test");
 
-  let strings = req.body.strings;
-  let message;
-
-  message = req.body.name;
-  message = message + "\n" + req.body.message;
-  message = message + "\n";
-
-  strings.forEach((item) => {
-    message = message + "\n" + item;
-  });
-
-  message = message + "\n";
-  message = message + "\n" + req.body.total;
-  message = message + "\n" + req.body.timing;
+  let message = rbCheckMessageHandler(req.body);
+  console.log(message);
 
   bot.sendMessage(settings.testChatID, message);
 })
