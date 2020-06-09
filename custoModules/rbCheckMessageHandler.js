@@ -1,4 +1,4 @@
-function rbCheckMessageHandler(object) {
+function messageHandler(object) {
 
   console.log(object);
   let strings = object.strings;
@@ -20,4 +20,4 @@ function rbCheckMessageHandler(object) {
 
 };
 
-module.exports.rbCheckMessageHandler = rbCheckMessageHandler;
+module.exports.messageHandler = messageHandler;
