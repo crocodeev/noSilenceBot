@@ -40,7 +40,7 @@ router.post('/test/', (req,res) => {
   let strings = req.body.strings;
   let message;
 
-  message = message + req.body.name;
+  message = req.body.name;
   message = message + "\n" + req.body.message;
   message = message + "\n";
 
