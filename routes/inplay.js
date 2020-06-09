@@ -37,9 +37,13 @@ router.get('/test/', (req,res) => {
 router.post('/test/', (req,res) => {
   res.send("sended to test");
 
-  console.log(req.body);
+  let strings = req.body.strings;
+  console.log(typeof strings[0]);
+  let message;
 
-  let message = req.body.test;
+  strings.forEach((item) => {
+    message = message + "\n" + "item";
+  });
   bot.sendMessage(settings.testChatID, message);
 })
 
