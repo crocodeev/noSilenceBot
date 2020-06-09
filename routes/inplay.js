@@ -34,6 +34,15 @@ router.get('/test/', (req,res) => {
 
 //post
 
+router.post('/test/', (req,res) => {
+  res.send("sended to test");
+
+  console.log(req.body);
+
+  let message = req.body;
+  bot.sendMessage(settings.testChatID, message);
+})
+
 router.post('/screenshot/', upload.single('screenshot'), (req,res) => {
 
   let message = messageHandler.format(req.body.where, req.body.when, req.body.what);
