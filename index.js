@@ -6,6 +6,8 @@
 const express = require('express');
 const app = express();
 
+app.use(express.json());
+
 app.use('/nosilence', require('./routes/inplay.js'));
 
 app.use('/', require('./routes/hitch.js'))
