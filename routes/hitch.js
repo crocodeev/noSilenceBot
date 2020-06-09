@@ -18,7 +18,7 @@ router.post('/temass/', (req,res) => {
   res.send("sended to test");
 
   let message = rbCheckMessageHandler(req.body);
-
+  console.log(message);
   bot.sendMessage(settings.temassChatID, message);
 })
 
