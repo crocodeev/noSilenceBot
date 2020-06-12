@@ -10,6 +10,8 @@ app.use(express.json());
 
 app.use('/nosilence', require('./routes/inplay.js'));
 
+app.use('/test', require('./routes/test.js'));
+
 app.use('/', require('./routes/hitch.js'))
 
 
