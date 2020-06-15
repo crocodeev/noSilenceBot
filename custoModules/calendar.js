@@ -28,11 +28,18 @@ const configSPB = {
 
 function getEvents(config,when) {
 
+  console.log(config);
+
+try {
+
   const scrapegoat = new Scrapegoat(config);
 
-  let dateObj = getRequestDate(when);
+} catch (e) {
 
-  let events;
+  console.log(e);
+} 
+
+  let dateObj = getRequestDate(when);
 
   scrapegoat.getEventsByTime(dateObj.start, dateObj.end)
   .then(
