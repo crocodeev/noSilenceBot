@@ -46,7 +46,9 @@ function getEvents(config,when) {
     }
   )
   .then(
-  console.log(message);
+    (message) => {
+      console.log(message);
+    }
     //bot.sendMessage(settings.testChatID, message)
   )
   .catch(
