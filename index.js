@@ -29,9 +29,18 @@ app.listen(3000, () => {
 //let job = new CronJob('0 */10 * * * *',
 //сalendar.getEvents(calendar.configSPB, "today"));
 
+const configSPB = {
+
+  auth: {
+        user: settings.calendar.user,
+        pass: settings.calendar.password,
+    },
+    uri: settings.calendar.uri.spb
+}
+
 let job1= new CronJob('0 */1 * * * *',
 ()=>{
-  calendar.getEvents(calendar.configSPB, "today");
+  calendar.getEvents(configSPB, "today");
 });
 
 let job2 = new CronJob('0 */2 * * * *',
