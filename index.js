@@ -31,6 +31,6 @@ app.listen(3000, () => {
 
 
 let job2 = new CronJob('0 */1 * * * *',
-console.log("job done"));
+()=>{console.log("job done");});
 
 job2.start();
