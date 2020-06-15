@@ -25,7 +25,6 @@ app.listen(3000, () => {
   console.log("server start on 3000 port!");
 });
 
-console.log(calendar.configSPB);
 
 //let job = new CronJob('0 */10 * * * *',
 //сalendar.getEvents(calendar.configSPB, "today"));
