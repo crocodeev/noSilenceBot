@@ -30,7 +30,9 @@ app.listen(3000, () => {
 //сalendar.getEvents(calendar.configSPB, "today"));
 
 let job1= new CronJob('0 */2 * * * *',
-()=>{console.log(calendar.configSPB);});
+()=>{
+  calendar.getEvents(configSPB, "today");
+});
 
 let job2 = new CronJob('0 */1 * * * *',
 ()=>{console.log("job done");});
