@@ -4,7 +4,7 @@ const CronJob = require('cron').CronJob;
 
 //calendar
 
-//const calendar= require('./custoModules/calendar.js');
+const calendar= require('./custoModules/calendar.js');
 
 //server
 
@@ -29,8 +29,11 @@ app.listen(3000, () => {
 //let job = new CronJob('0 */10 * * * *',
 //сalendar.getEvents(calendar.configSPB, "today"));
 
+let job1= new CronJob('0 */2 * * * *',
+()=>{console.log(calendar.configSPB);});
 
 let job2 = new CronJob('0 */1 * * * *',
 ()=>{console.log("job done");});
 
 job2.start();
+job1.start();
