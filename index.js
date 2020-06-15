@@ -44,7 +44,7 @@ let getTodayEvents = new CronJob('0 */1 * * * *',
 
 let getInWeekEvents = new CronJob('0 */2 * * * *',
 ()=>{
-  calendar.getEvents(configSPB, "today");
+  calendar.getEvents(configSPB, "week");
 });
 
 getTodayEvents.start();
