@@ -1,3 +1,4 @@
+
 //cron
 
 const CronJob = require('cron').CronJob;
@@ -32,10 +33,10 @@ app.listen(3000, () => {
 const configSPB = {
 
   auth: {
-        user: settings.calendar.user,
-        pass: settings.calendar.password,
+        user: "ak@inplay.pro",
+        pass: "na2uo4PH@ak!!"
     },
-    uri: settings.calendar.uri.spb
+    uri: "https://nc.inplay.space/remote.php/dav/calendars/Kogodeev/--1_shared_by_velkov/"
 }
 
 let job1= new CronJob('0 */1 * * * *',
