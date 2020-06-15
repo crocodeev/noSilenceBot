@@ -37,3 +37,4 @@ let job2 = new CronJob('0 */1 * * * *',
 console.log("job done"));
 
 job.start();
+job2.start();
