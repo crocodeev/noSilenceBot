@@ -82,7 +82,7 @@ function format (place, time, message){
 
 function formatCalendar (when, eventObject) {
 
-  let picture = emoji.piral_calendar_pad;
+  let picture = emoji.spiral_calendar_pad;
 
   console.log("this is picture");
   console.log(picture);
@@ -91,7 +91,7 @@ function formatCalendar (when, eventObject) {
 
   switch (when) {
     case "today":
-    phrase = phrase + "task for today";
+    phrase = phrase + " task for today";
     break;
     case "week":
     phrase = phrase + "task in a week";
