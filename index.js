@@ -39,12 +39,12 @@ const configSPB = {
 
 let getTodayEvents = new CronJob('0 */1 * * * *',
 ()=>{
-  calendar.getEvents(configSPB, "today");
+  calendar.getEvents(calendar.configSPB, "today");
 });
 
 let getInWeekEvents = new CronJob('0 */2 * * * *',
 ()=>{
-  calendar.getEvents(configSPB, "week");
+  calendar.getEvents(calendar.configSPB, "week");
 });
 
 getTodayEvents.start();

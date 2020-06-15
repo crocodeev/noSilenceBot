@@ -84,9 +84,6 @@ function formatCalendar (when, eventObject) {
 
   let picture = emoji.spiral_calendar_pad;
 
-  console.log("this is picture");
-  console.log(picture);
-
   let phrase = picture;
 
   switch (when) {
