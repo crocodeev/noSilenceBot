@@ -37,12 +37,12 @@ const configSPB = {
     uri: "https://nc.inplay.space/remote.php/dav/calendars/Kogodeev/--1_shared_by_velkov/"
 }
 
-let getTodayEvents = new CronJob('0 */1 * * * *',
+let getTodayEvents = new CronJob('0 0 9 * * *',
 ()=>{
   calendar.getEvents(calendar.configSPB, "today");
 });
 
-let getInWeekEvents = new CronJob('0 */2 * * * *',
+let getInWeekEvents = new CronJob('30 0  9 * * *',
 ()=>{
   calendar.getEvents(calendar.configSPB, "week");
 });
