@@ -1,4 +1,4 @@
-//const Scrapegoat = require("scrapegoat");
+const Scrapegoat = require("scrapegoat");
 const moment = require('moment');
 const format = "YYYYMMDD[T]HHmmss[Z]";
 
