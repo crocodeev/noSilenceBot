@@ -26,7 +26,7 @@ const configSPB = {
 }
 
 
-function getEvents(config,when) {
+/*function getEvents(config,when) {
 
   const scrapegoat = new Scrapegoat(config);
 
@@ -74,8 +74,8 @@ function getRequestDate(when) {
       obj.end   = end.format(format);
       return obj;
     }
-}
+}*/
 
-module.exports.getEvents = getEvents;
+//module.exports.getEvents = getEvents;
 module.exports.configMSK = configMSK;
 module.exports.configSPB = configSPB;
