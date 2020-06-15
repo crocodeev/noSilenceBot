@@ -1,4 +1,10 @@
+//cron
 
+const CronJob = require('cron').CronJob;
+
+//calendar
+
+const calendar= require('./custoModules/calendar.js');
 
 //server
 
@@ -18,3 +24,8 @@ app.use('/', require('./routes/hitch.js'))
 app.listen(3000, () => {
   console.log("server start on 3000 port!");
 });
+
+let job = new CronJob('0 */10 * * * *',
+calendar.getEvents(calendar.configSPB, "today"));
+
+job.start();

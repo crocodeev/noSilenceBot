@@ -80,5 +80,36 @@ function format (place, time, message){
   return phrase = picture + " " + place + " " + message + " " + time;
 }
 
+function formatCalendar (when, eventObject) {
+
+  let picture = emoji.piral_calendar_pad;
+
+  let phrase = picture;
+
+  switch (when) {
+    case "today":
+    phrase = phrase + " for today";
+      break;
+    case "week":
+    phrase = phrase + " in a week";
+    break;
+    case "duty":
+    phrase = phrase + " on duty";
+    break;
+    default:
+    phrase = phrase + " todo";
+  }
+
+ eventObject.forEach((item) => {
+
+   phrase = phrase + "\n" + item.data.title;
+
+ });
+
+  return phrase;
+
+}
+
 module.exports.emo = emo;
 module.exports.format = format;
+module.exports.formatCalendar = formatCalendar;
