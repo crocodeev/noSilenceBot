@@ -30,7 +30,7 @@ function getEvents(config,when) {
 
   console.log(config);
 
-/*try {
+try {
 
   const scrapegoat = new Scrapegoat(config);
 
@@ -59,7 +59,7 @@ function getEvents(config,when) {
     (e) => {
       console.log(e);
     }
-  );*/
+  );
 
 }
 
