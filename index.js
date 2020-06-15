@@ -27,9 +27,9 @@ app.listen(3000, () => {
 
 console.log(calendar.configSPB);
 
-let job = new CronJob('0 */10 * * * *',
-сalendar.getEvents(calendar.configSPB, "today"));
+//let job = new CronJob('0 */10 * * * *',
+//сalendar.getEvents(calendar.configSPB, "today"));
 
 
 
-job.start();
+//job.start();
