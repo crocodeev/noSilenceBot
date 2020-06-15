@@ -38,6 +38,7 @@ function getEvents(config,when) {
     (responce) => {
      if(responce.length > 0 ){
        let message =  messageHandler.formatCalendar(when, responce);
+       console.log(message);
        return message;
      }else{
        console.log("nothing todo for this date");
