@@ -9,10 +9,9 @@
   "author": "crocodeev",
   "license": "ISC",
   "dependencies": {
+    "cron": "^1.8.2",
     "node-telegram-bot-api": "^0.30.0",
-    "save-dev": "^2.0.0",
-    "scrapegoat": "^1.0.1",
-    "cron": "^1.8.2"
+    "scrapegoat": "^1.0.1"
   },
   "devDependencies": {
     "express": "^4.16.4",

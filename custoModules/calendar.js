@@ -28,16 +28,8 @@ const configSPB = {
 
 function getEvents(config,when) {
 
-  console.log(config);
-
-try {
 
   const scrapegoat = new Scrapegoat(config);
-
-} catch (e) {
-
-  console.log(e);
-}
 
   let dateObj = getRequestDate(when);
 
