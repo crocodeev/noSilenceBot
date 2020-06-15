@@ -84,17 +84,20 @@ function formatCalendar (when, eventObject) {
 
   let picture = emoji.piral_calendar_pad;
 
+  console.log("this is picture");
+  console.log(picture);
+
   let phrase = picture;
 
   switch (when) {
     case "today":
-    phrase = phrase + " for today";
-      break;
+    phrase = phrase + "task for today";
+    break;
     case "week":
-    phrase = phrase + " in a week";
+    phrase = phrase + "task in a week";
     break;
     case "duty":
-    phrase = phrase + " on duty";
+    phrase = phrase + "who is on duty";
     break;
     default:
     phrase = phrase + " todo";
