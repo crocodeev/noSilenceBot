@@ -1,11 +1,11 @@
 
 //cron
 
-const CronJob = require('cron').CronJob;
+//const CronJob = require('cron').CronJob;
 
 //calendar
 
-const calendar= require('./custoModules/calendar.js');
+//const calendar= require('./custoModules/calendar.js');
 
 //server
 
@@ -28,22 +28,22 @@ app.listen(3000, () => {
 
 
 
-const configSPB = {
+/*const configSPB = {
 
   auth: {
         user: "ak@inplay.pro",
         pass: "na2uo4PH@ak!!"
     },
     uri: "https://nc.inplay.space/remote.php/dav/calendars/Kogodeev/--1_shared_by_velkov/"
-}
+}*/
 
-let job1= new CronJob('0 */1 * * * *',
-()=>{
-  calendar.getEvents(configSPB, "today");
-});
+//let job1= new CronJob('0 */1 * * * *',
+//()=>{
+//  calendar.getEvents(configSPB, "today");
+//});
 
-let job2 = new CronJob('0 */2 * * * *',
-()=>{console.log("job done");});
+//let job2 = new CronJob('0 */2 * * * *',
+//()=>{console.log("job done");});
 
-job2.start();
-job1.start();
+//job2.start();
+//job1.start();
