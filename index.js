@@ -29,22 +29,22 @@ app.listen(3000, () => {
 
 // calendar polling
 
-let getTodayEventsSPB = new CronJob('0 */2 * * * *',
+let getTodayEventsSPB = new CronJob('0 * 9 * * *',
 ()=>{
   calendar.getEvents(calendar.configSPB, "today", "spb");
 });
 
-let getInWeekEventsSPB = new CronJob('0 */2 * * * *',
+let getInWeekEventsSPB = new CronJob('30 * 9 * * *',
 ()=>{
   calendar.getEvents(calendar.configSPB, "week", "spb");
 });
 
-let getTodayEventsMSK = new CronJob('0 */2 * * * *',
+let getTodayEventsMSK = new CronJob('0 * 9 * * *',
 ()=>{
   calendar.getEvents(calendar.configMSK, "today", "msk");
 });
 
-let getInWeekEventsMSK = new CronJob('0 */2 * * * *',
+let getInWeekEventsMSK = new CronJob('30 * 9 * * *',
 ()=>{
   calendar.getEvents(calendar.configMSK, "week", "msk");
 });
