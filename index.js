@@ -27,25 +27,29 @@ app.listen(3000, () => {
 });
 
 
+// calendar polling
 
-const configSPB = {
-
-  auth: {
-        user: "ak@inplay.pro",
-        pass: "na2uo4PH@ak!!"
-    },
-    uri: "https://nc.inplay.space/remote.php/dav/calendars/Kogodeev/--1_shared_by_velkov/"
-}
-
-let getTodayEvents = new CronJob('0 0 9 * * *',
+let getTodayEventsSPB = new CronJob('0 0/2 * * * *',
 ()=>{
   calendar.getEvents(calendar.configSPB, "today");
 });
 
-let getInWeekEvents = new CronJob('30 0  9 * * *',
+let getInWeekEventsSPB = new CronJob('0 0/2 * * * *',
 ()=>{
   calendar.getEvents(calendar.configSPB, "week");
 });
 
-getTodayEvents.start();
-getInWeekEvents.start();
+let getTodayEventsMSK = new CronJob('0 0/2 * * * *',
+()=>{
+  calendar.getEvents(calendar.configSPB, "today");
+});
+
+let getInWeekEventsMSK = new CronJob('0 0/2 * * * *',
+()=>{
+  calendar.getEvents(calendar.configSPB, "week");
+});
+
+getTodayEventsSPB.start();
+getInWeekEventsSPB.start();
+getTodayEventsMSK.start();
+getInWeekEventsMSK.start();
