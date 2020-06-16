@@ -29,15 +29,15 @@ app.listen(3000, () => {
 
 // calendar polling
 
-let getTodayEventsSPB = new CronJob('0 */2 * * * *',
-()=>{
-  calendar.getEvents(calendar.configSPB, "today", "spb");
-});
+//let getTodayEventsSPB = new CronJob('0 */2 * * * *',
+//()=>{
+//  calendar.getEvents(calendar.configSPB, "today", "spb");
+//});
 
-let getInWeekEventsSPB = new CronJob('0 */2 * * * *',
-()=>{
-  calendar.getEvents(calendar.configSPB, "week", "spb");
-});
+//let getInWeekEventsSPB = new CronJob('0 */2 * * * *',
+//()=>{
+//  calendar.getEvents(calendar.configSPB, "week", "spb");
+//});
 
 let getTodayEventsMSK = new CronJob('0 */2 * * * *',
 ()=>{
@@ -49,7 +49,7 @@ let getInWeekEventsMSK = new CronJob('0 */2 * * * *',
   calendar.getEvents(calendar.configMSK, "week", "msk");
 });
 
-getTodayEventsSPB.start();
-getInWeekEventsSPB.start();
+//getTodayEventsSPB.start();
+//getInWeekEventsSPB.start();
 getTodayEventsMSK.start();
 getInWeekEventsMSK.start();
