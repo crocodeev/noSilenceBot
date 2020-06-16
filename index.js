@@ -31,22 +31,22 @@ app.listen(3000, () => {
 
 let getTodayEventsSPB = new CronJob('0 */2 * * * *',
 ()=>{
-  calendar.getEvents(calendar.configSPB, "today");
+  calendar.getEvents(calendar.configSPB, "today", "spb");
 });
 
 let getInWeekEventsSPB = new CronJob('0 */2 * * * *',
 ()=>{
-  calendar.getEvents(calendar.configSPB, "week");
+  calendar.getEvents(calendar.configSPB, "week", "spb");
 });
 
 let getTodayEventsMSK = new CronJob('0 */2 * * * *',
 ()=>{
-  calendar.getEvents(calendar.configSPB, "today");
+  calendar.getEvents(calendar.configMSK, "today", "msk");
 });
 
 let getInWeekEventsMSK = new CronJob('0 */2 * * * *',
 ()=>{
-  calendar.getEvents(calendar.configSPB, "week");
+  calendar.getEvents(calendar.configMSK, "week", "msk");
 });
 
 getTodayEventsSPB.start();

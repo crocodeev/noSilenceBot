@@ -26,7 +26,7 @@ const configSPB = {
 }
 
 
-function getEvents(config,when) {
+function getEvents(config,when,where) {
 
 
   const scrapegoat = new Scrapegoat(config);
@@ -47,7 +47,16 @@ function getEvents(config,when) {
   )
   .then(
     (message) => {
-      bot.sendMessage(settings.testChatID, message);
+      switch (where) {
+        case "spb":
+        bot.sendMessage(settings.spbChatID, message);
+        break;
+        case "msk":
+        bot.sendMessage(settings.mskChatID, message);  
+        break;
+        default:
+        bot.sendMessage(settings.testChatID, message);
+      }
     }
   )
   .catch(
