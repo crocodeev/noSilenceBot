@@ -48,19 +48,20 @@ function getEvents(config,when,where) {
   .then(
     (message) => {
 
-      console.log(message);
-
-      switch (where) {
-        case "spb":
-        bot.sendMessage(settings.spbChatID, message);
-        break;
-        case "msk":
-        bot.sendMessage(settings.mskChatID, message);
-        break;
-        default:
-        bot.sendMessage(settings.testChatID, message);
+      if (typeof message === 'undefined') {
+        console.log("really nothing to do");
+      } else {
+        switch (where) {
+          case "spb":
+          bot.sendMessage(settings.spbChatID, message);
+          break;
+          case "msk":
+          bot.sendMessage(settings.mskChatID, message);
+          break;
+          default:
+          bot.sendMessage(settings.testChatID, message);
+        }
       }
-
     }
   )
   .catch(
