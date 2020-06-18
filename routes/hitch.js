@@ -29,7 +29,7 @@ router.post('/temass/', (req,res) => {
 
 })
 
-router.post('/temass/report',  upload.single('files'), (req,res) => {
+router.post('/temass/report/',  upload.single('files'), (req,res) => {
   res.send("sended to test");
 
   let file = req.file.buffer;
