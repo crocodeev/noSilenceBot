@@ -1,10 +1,10 @@
 {
   "name": "no_silence_bot",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "description": "bot that receives message from PizaCZ  Silence Detector and send it to chat",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js", 
+    "start": "node index.js",
     "test": "node index.js"
   },
   "author": "crocodeev",
