@@ -25,25 +25,7 @@ router.get('/msk/', (req,res) => {
   //bot.sendMessage(settings.hitchChatID, message);
 })
 
-router.get('/test/', (req,res) => {
-  res.send("sended to test");
-
-  let message = messageHandler.format(req.query.name, req.query.date, req.query.music);
-  bot.sendMessage(settings.testChatID, message);
-})
-
 //post
-
-router.post('/screenshot/', upload.single('screenshot'), (req,res) => {
-
-  let message = messageHandler.format(req.body.where, req.body.when, req.body.what);
-
-  let screenshot = req.file.buffer;
-
-  bot.sendPhoto(settings.testChatID, screenshot, {caption: message});
-
-	res.send("sended");
-})
 
 router.post('/screenshotSPB/', upload.single('screenshot'), (req,res) => {
 
