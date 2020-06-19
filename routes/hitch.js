@@ -22,18 +22,18 @@ bot.sendMessage(settings.temassChatID, message);
 })
 
 router.post('/temass/', (req,res) => {
-  res.send("sended to test");
+  res.send("sended to hitch");
 
   let message = rbCheck.messageHandler(req.body);
   bot.sendMessage(settings.temassChatID, message);
 
 })
 
-router.post('/temass/report/',  upload.single('files'), (req,res) => {
-  res.send("sended to test");
+router.post('/temass/report/',  upload.single('report'), (req,res) => {
+  res.send("sended to hitch");
 
   let file = req.file.buffer;
-  bot.sendDocument(settings.temassChatID, file);
+  bot.sendDocument(settings.testChatID, file);
 
 })
 
