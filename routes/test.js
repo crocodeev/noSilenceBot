@@ -44,6 +44,10 @@ router.post('/screenshot/', upload.single('screenshot'), (req,res) => {
 
 router.post('/file/', (req,res) => {
 
+  res.send("sended");
+
+  console.log(req);
+
   let file = req;
 
   bot.sendDocument(settings.testChatID, file);
