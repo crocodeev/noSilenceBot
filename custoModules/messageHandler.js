@@ -93,6 +93,9 @@ function emo (message) {
     case 'DISK IS OK':
       picture = emoji.cd;
       break;
+    case 'MEDIAWIKI':
+      picture = emoji.book;
+      break;
     default:
       picture = emoji.eggplant;
   }
@@ -102,6 +105,11 @@ function emo (message) {
 function format (place, time, message){
   let picture = emo(message);
   return phrase = picture + " " + place + " " + message + " " + time;
+}
+
+function formatMediaWiki (summary, articleTitle, author){
+  let picture = emo("MEDIAWIKI");
+  return phrase = pisture + " " + summary + "\r\n" + articleTitle + "\r\n " + author;
 }
 
 function formatCalendar (when, eventObject) {

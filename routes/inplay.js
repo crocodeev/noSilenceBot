@@ -27,6 +27,14 @@ router.get('/msk/', (req,res) => {
 
 //post
 
+router.post('/mediawiki', (req, res)=>{
+  res.send("sended to telegram");
+
+  let message = messageHandler.formatMediaWiki(req.body.summary, req.body.articleTitle, req.body.author);
+  bot.sendMessage(settings.testChatID, message);
+
+})
+
 router.post('/screenshotSPB/', upload.single('screenshot'), (req,res) => {
 
   let message = messageHandler.format(req.body.where, req.body.when, req.body.what);
