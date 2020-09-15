@@ -24,8 +24,7 @@ router.get('/g/', (req,res) => {
 router.post('/p/', (req,res) => {
   res.send("sended to test");
 
-  let message = rbCheck.messageHandler(req.body);
-  console.log(message);
+  console.log(req.body);
 
   bot.sendMessage(settings.testChatID, message);
 })
