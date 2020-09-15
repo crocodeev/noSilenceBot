@@ -28,10 +28,12 @@ router.get('/msk/', (req,res) => {
 //post
 
 router.post('/mediawiki/', (req, res)=>{
-  res.send("sended to telegram");
 
   let message = messageHandler.formatMediaWiki(req.body.summary, req.body.articleTitle, req.body.author);
-  bot.sendMessage(settings.testChatID, message);
+  bot.sendMessage(settings.mskChatID, message);
+  bot.sendMessage(settings.spbChatID, message);
+
+  res.send("sended to telegram");
 
 })
 
