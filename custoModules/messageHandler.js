@@ -109,7 +109,7 @@ function format (place, time, message){
 
 function formatMediaWiki (summary, articleTitle, author){
   let picture = emo("MEDIAWIKI");
-  return phrase = picture + " " + summary + "\r\n" + articleTitle + "\r\n " + author;
+  return phrase = picture + " " + summary + "\r\n" + "Статья: " +  articleTitle + "\r\n " + "Автор: "+ author;
 }
 
 function formatCalendar (when, eventObject) {
