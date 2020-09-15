@@ -27,7 +27,7 @@ router.get('/msk/', (req,res) => {
 
 //post
 
-router.post('/mediawiki', (req, res)=>{
+router.post('/mediawiki/', (req, res)=>{
   res.send("sended to telegram");
 
   let message = messageHandler.formatMediaWiki(req.body.summary, req.body.articleTitle, req.body.author);
