@@ -24,7 +24,7 @@ router.get('/g/', (req,res) => {
 router.post('/p/', (req,res) => {
   res.send("sended to test");
 
-  console.log(req.body);
+  console.log(req.body.articleTitle);
 
   bot.sendMessage(settings.testChatID, message);
 })
