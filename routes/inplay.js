@@ -31,7 +31,7 @@ router.post('/mediawiki/', (req, res)=>{
 
   let str = req.body.articleTitle;
 
-  if( str.search(/Файл/) != 0 ){
+  if( str.search(/Файл/) == 0 ){
     res.send("nothing to send");
   }else{
     let message = messageHandler.formatMediaWiki(req.body.summary, req.body.articleTitle, req.body.author);
