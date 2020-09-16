@@ -29,12 +29,17 @@ router.get('/msk/', (req,res) => {
 
 router.post('/mediawiki/', (req, res)=>{
 
-  let message = messageHandler.formatMediaWiki(req.body.summary, req.body.articleTitle, req.body.author);
-  bot.sendMessage(settings.mskChatID, message);
-  bot.sendMessage(settings.spbChatID, message);
+  let str = req.body.articleTitle;
 
-  res.send("sended to telegram");
+  if( str.search(/Файл/) != 0 ){
+    res.send("nothing to send");
+  }else{
+    let message = messageHandler.formatMediaWiki(req.body.summary, req.body.articleTitle, req.body.author);
+    bot.sendMessage(settings.mskChatID, message);
+    bot.sendMessage(settings.spbChatID, message);
 
+    res.send("sended to telegram");
+  }
 })
 
 router.post('/screenshotSPB/', upload.single('screenshot'), (req,res) => {
