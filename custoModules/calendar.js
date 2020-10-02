@@ -25,6 +25,16 @@ const configSPB = {
     uri: settings.calendar.uri.spb
 }
 
+const configDUTY = {
+
+  auth: {
+        user: settings.calendar.user,
+        pass: settings.calendar.password,
+    },
+    uri: settings.calendar.uri.duty
+}
+
+
 
 function getEvents(config,when,where) {
 
@@ -94,3 +104,4 @@ function getRequestDate(when) {
 module.exports.getEvents = getEvents;
 module.exports.configMSK = configMSK;
 module.exports.configSPB = configSPB;
+module.exports.configSPB = configDUTY;
