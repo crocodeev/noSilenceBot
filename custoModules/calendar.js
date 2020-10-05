@@ -62,7 +62,7 @@ function getEvents(config,when,where) {
       } else {
         switch (where) {
           case "spb":
-          bot.sendMessage(settings.spbChatID, message);
+          bot.sendMessage(settings.testChatID, message);
           break;
           case "msk":
           bot.sendMessage(settings.mskChatID, message);

@@ -54,9 +54,15 @@ let getTodayEventsDUTY = new CronJob('* */2 * * * *',
   calendar.getEvents(calendar.configDUTY, "today", "");
 });
 
+let getTestEventsTest= new CronJob('00 */1 * * * *',
+()=>{
+  calendar.getEvents(calendar.configSPB, "today", "");
+});
+
 
 getTodayEventsSPB.start();
 getInWeekEventsSPB.start();
 getTodayEventsMSK.start();
 getInWeekEventsMSK.start();
 getTodayEventsDUTY.start();
+getTestEventsTest.start();
