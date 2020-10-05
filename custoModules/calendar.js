@@ -75,6 +75,7 @@ function getEvents(config,when,where) {
   )
   .catch(
     (e) => {
+      console.log("Calnedar");
       console.log(e);
     }
   );
