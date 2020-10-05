@@ -104,4 +104,4 @@ function getRequestDate(when) {
 module.exports.getEvents = getEvents;
 module.exports.configMSK = configMSK;
 module.exports.configSPB = configSPB;
-module.exports.configSPB = configDUTY;
+module.exports.configDUTY = configDUTY;
