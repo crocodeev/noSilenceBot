@@ -65,4 +65,4 @@ getInWeekEventsSPB.start();
 getTodayEventsMSK.start();
 getInWeekEventsMSK.start();
 //getTodayEventsDUTY.start();
-getTestEventsTest.start();
+//getTestEventsTest.start();
