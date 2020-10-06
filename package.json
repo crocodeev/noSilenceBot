@@ -4,7 +4,7 @@
   "description": "bot that receives message from PizaCZ  Silence Detector and send it to chat",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_EXTRA_CA_CERTS=./bundled.pem node index.js",
+    "start": "NODE_EXTRA_CA_CERTS=./bundle.pem node index.js",
     "test": "node index.js"
   },
   "author": "crocodeev",
