@@ -49,14 +49,9 @@ let getInWeekEventsMSK = new CronJob('30 00 9 * * *',
   calendar.getEvents(calendar.configMSK, "week", "msk");
 });
 
-let getTodayEventsDUTY = new CronJob('* */2 * * * *',
+let getTodayEventsDUTY = new CronJob('00 00 10 * * *',
 ()=>{
-  calendar.getEvents(calendar.configDUTY, "today", "");
-});
-
-let getTestEventsTest= new CronJob('00 */1 * * * *',
-()=>{
-  calendar.getEvents(calendar.configSPB, "today", "");
+  calendar.getEvents(calendar.configDUTY, "today", "spb");
 });
 
 
@@ -65,4 +60,3 @@ getInWeekEventsSPB.start();
 getTodayEventsMSK.start();
 getInWeekEventsMSK.start();
 getTodayEventsDUTY.start();
-getTestEventsTest.start();
