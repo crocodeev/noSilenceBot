@@ -51,7 +51,7 @@ let getInWeekEventsMSK = new CronJob('30 00 9 * * *',
 
 let getTodayEventsDUTY = new CronJob('00 00 10 * * *',
 ()=>{
-  calendar.getEvents(calendar.configDUTY, "today", "spb");
+  calendar.getEvents(calendar.configDUTY, "today", "duty");
 });
 
 

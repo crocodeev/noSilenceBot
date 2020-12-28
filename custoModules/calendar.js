@@ -66,6 +66,9 @@ function getEvents(config,when,where) {
           break;
           case "msk":
           bot.sendMessage(settings.mskChatID, message);
+          case "duty":
+          bot.sendMessage(settings.spbChatID, message);
+          bot.sendMessage(settings.mskChatID, message);
           break;
           default:
           bot.sendMessage(settings.testChatID, message);
