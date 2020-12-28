@@ -10,7 +10,21 @@ Description of handled messages:
 */
 
 function emo (message) {
+
   let picture = null;
+  //quick fix for incorrect message enter
+  const noSoundRegExp = /(no)(\s+)(sound)/i
+  const okSoundRegExp = /(sound)(\s+)(ok)/i
+
+  if(noSoundRegExp.test(message)){
+    piture = emoji.sos;
+    return picture;
+  }else if(okSoundRegExp.test(message)){
+    picture = emoji.loud_sound;
+    return picture;
+  }
+
+
   switch (message) {
     case 'ALARM:NO SOUND':
       picture = emoji.sos;
