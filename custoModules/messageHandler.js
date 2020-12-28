@@ -18,7 +18,7 @@ function emo (message) {
 
   if(noSoundRegExp.test(message)){
     console.log(message, "SOS");
-    piture = emoji.sos;
+    picture = emoji.sos;
     console.log(picture);
     return picture;
   }else if(okSoundRegExp.test(message)){
