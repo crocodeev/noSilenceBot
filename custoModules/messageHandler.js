@@ -17,10 +17,14 @@ function emo (message) {
   const okSoundRegExp = /(sound)(\s+)(ok)/i
 
   if(noSoundRegExp.test(message)){
+    console.log(message, "SOS");
     piture = emoji.sos;
+    console.log(picture);
     return picture;
   }else if(okSoundRegExp.test(message)){
+    console.log(message, "OK");
     picture = emoji.loud_sound;
+    console.log(picture);
     return picture;
   }
 
@@ -113,6 +117,7 @@ function emo (message) {
     default:
       picture = emoji.eggplant;
   }
+
   return picture;
 };
 
