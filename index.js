@@ -15,7 +15,7 @@ const app = express();
 
 app.use(express.json());
 
-app.use('/phone', require('./routes/phone.js'))
+app.use('/nosilence/phone', require('./routes/phone.js'))
 
 app.use('/nosilence', require('./routes/inplay.js'));
 
