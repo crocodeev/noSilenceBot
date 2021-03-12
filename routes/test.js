@@ -24,8 +24,7 @@ router.get('/g/', (req,res) => {
 router.post('/p/', (req,res) => {
   res.send("sended to test");
 
-  let message = rbCheck.messageHandler(req.body);
-  console.log(message);
+  console.log(req.body.articleTitle);
 
   bot.sendMessage(settings.testChatID, message);
 })
@@ -40,6 +39,18 @@ router.post('/screenshot/', upload.single('screenshot'), (req,res) => {
   bot.sendPhoto(settings.testChatID, screenshot, {caption: message});
 
 	res.send("sended");
+})
+
+router.post('/file/', (req,res) => {
+
+  res.send("sended");
+
+  console.log(req);
+
+  let file = req;
+
+  bot.sendDocument(settings.testChatID, file);
+
 })
 
 module.exports = router;

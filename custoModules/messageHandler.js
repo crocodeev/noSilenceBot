@@ -10,7 +10,25 @@ Description of handled messages:
 */
 
 function emo (message) {
+
   let picture = null;
+  //quick fix for incorrect message enter
+  const noSoundRegExp = /(no)(\s+)(sound)/i
+  const okSoundRegExp = /(sound)(\s+)(ok)/i
+
+  if(noSoundRegExp.test(message)){
+    console.log(message, "SOS");
+    picture = emoji.sos;
+    console.log(picture);
+    return picture;
+  }else if(okSoundRegExp.test(message)){
+    console.log(message, "OK");
+    picture = emoji.loud_sound;
+    console.log(picture);
+    return picture;
+  }
+
+
   switch (message) {
     case 'ALARM:NO SOUND':
       picture = emoji.sos;
@@ -93,15 +111,24 @@ function emo (message) {
     case 'DISK IS OK':
       picture = emoji.cd;
       break;
+    case 'MEDIAWIKI':
+      picture = emoji.book;
+      break;
     default:
       picture = emoji.eggplant;
   }
+
   return picture;
 };
 
 function format (place, time, message){
   let picture = emo(message);
   return phrase = picture + " " + place + " " + message + " " + time;
+}
+
+function formatMediaWiki (summary, articleTitle, author){
+  let picture = emo("MEDIAWIKI");
+  return phrase = picture + " " + summary + "\r\n" + "Статья: " +  articleTitle + "\r\n " + "Автор: "+ author;
 }
 
 function formatCalendar (when, eventObject) {
@@ -137,3 +164,4 @@ function formatCalendar (when, eventObject) {
 module.exports.emo = emo;
 module.exports.format = format;
 module.exports.formatCalendar = formatCalendar;
+module.exports.formatMediaWiki = formatMediaWiki;

@@ -15,6 +15,8 @@ const app = express();
 
 app.use(express.json());
 
+app.use('/nosilence/phone', require('./routes/phone.js'))
+
 app.use('/nosilence', require('./routes/inplay.js'));
 
 app.use('/test', require('./routes/test.js'));
@@ -49,7 +51,14 @@ let getInWeekEventsMSK = new CronJob('30 00 9 * * *',
   calendar.getEvents(calendar.configMSK, "week", "msk");
 });
 
+let getTodayEventsDUTY = new CronJob('00 00 10 * * *',
+()=>{
+  calendar.getEvents(calendar.configDUTY, "today", "duty");
+});
+
+
 getTodayEventsSPB.start();
 getInWeekEventsSPB.start();
 getTodayEventsMSK.start();
 getInWeekEventsMSK.start();
+getTodayEventsDUTY.start();

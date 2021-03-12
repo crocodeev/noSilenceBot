@@ -25,6 +25,16 @@ const configSPB = {
     uri: settings.calendar.uri.spb
 }
 
+const configDUTY = {
+
+  auth: {
+        user: settings.calendar.user,
+        pass: settings.calendar.password,
+    },
+    uri: settings.calendar.uri.duty
+}
+
+
 
 function getEvents(config,when,where) {
 
@@ -56,6 +66,9 @@ function getEvents(config,when,where) {
           break;
           case "msk":
           bot.sendMessage(settings.mskChatID, message);
+          case "duty":
+          bot.sendMessage(settings.spbChatID, message);
+          bot.sendMessage(settings.mskChatID, message);
           break;
           default:
           bot.sendMessage(settings.testChatID, message);
@@ -65,6 +78,7 @@ function getEvents(config,when,where) {
   )
   .catch(
     (e) => {
+      console.log("Calendar");
       console.log(e);
     }
   );
@@ -94,3 +108,4 @@ function getRequestDate(when) {
 module.exports.getEvents = getEvents;
 module.exports.configMSK = configMSK;
 module.exports.configSPB = configSPB;
+module.exports.configDUTY = configDUTY;
