@@ -161,6 +161,11 @@ function formatCalendar (when, eventObject) {
 
 }
 
+function formatPhone (phoneNumber){
+  let picture = emo("phone");
+  return phrase = picture + " missed call from: " + phoneNumber;
+}
+
 module.exports.emo = emo;
 module.exports.format = format;
 module.exports.formatCalendar = formatCalendar;

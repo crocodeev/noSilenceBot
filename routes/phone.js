@@ -7,9 +7,9 @@ const {Router} = require('express');
 const router = Router();
 
 router.get('/spb/', (req,res) => {
-  console.log(req.query.phone);
   res.send("sended to spb chat");
-  //let message = messageHandler.format(req.query.name, req.query.date, req.query.music);
+  let message = messageHandler.formatPhone(req.query.phone);
+  console.log(message);
   //bot.sendMessage(settings.spbChatID, message);
   //bot.sendMessage(settings.hitchChatID, message);
 })
@@ -22,8 +22,8 @@ router.get('/msk/', (req,res) => {
 })
 
 router.post('/spb/', (req,res) => {
+  console.log(req.body);
   res.send("sended to spb chat");
-  console.log(message.body);
   //let message = messageHandler.format(req.query.name, req.query.date, req.query.music);
   //bot.sendMessage(settings.spbChatID, message);
   //bot.sendMessage(settings.hitchChatID, message);
