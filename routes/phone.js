@@ -9,31 +9,25 @@ const router = Router();
 router.get('/spb/', (req,res) => {
   res.send("sended to spb chat");
   let message = messageHandler.formatPhone(req.query.phone);
-  console.log(message);
-  //bot.sendMessage(settings.spbChatID, message);
-  //bot.sendMessage(settings.hitchChatID, message);
+  bot.sendMessage(settings.spbChatID, message);
 })
 
 router.get('/msk/', (req,res) => {
   res.send("sended to msk chat");
-  let message = messageHandler.format(req.query.name, req.query.date, req.query.music);
+  let message = messageHandler.formatPhone(req.query.phone);
   bot.sendMessage(settings.mskChatID, message);
-  //bot.sendMessage(settings.hitchChatID, message);
 })
 
 router.post('/spb/', (req,res) => {
-  console.log(req.body);
   res.send("sended to spb chat");
-  //let message = messageHandler.format(req.query.name, req.query.date, req.query.music);
-  //bot.sendMessage(settings.spbChatID, message);
-  //bot.sendMessage(settings.hitchChatID, message);
+  let message = messageHandler.formatPhone(req.body.phone);
+  bot.sendMessage(settings.spbChatID, message);
 })
 
-router.get('/msk/', (req,res) => {
+router.post('/msk/', (req,res) => {
   res.send("sended to msk chat");
-  let message = messageHandler.format(req.query.name, req.query.date, req.query.music);
+  let message = messageHandler.formatPhone(req.body.phone);
   bot.sendMessage(settings.mskChatID, message);
-  //bot.sendMessage(settings.hitchChatID, message);
 })
 
 

@@ -162,7 +162,7 @@ function formatCalendar (when, eventObject) {
 }
 
 function formatPhone (phoneNumber){
-  let picture = emo("phone");
+  let picture = emo("telephone");
   return phrase = picture + " missed call from: " + phoneNumber;
 }
 
