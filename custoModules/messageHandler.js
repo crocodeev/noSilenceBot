@@ -170,3 +170,4 @@ module.exports.emo = emo;
 module.exports.format = format;
 module.exports.formatCalendar = formatCalendar;
 module.exports.formatMediaWiki = formatMediaWiki;
+module.exports.formatPhone = formatPhone;
