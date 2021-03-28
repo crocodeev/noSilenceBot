@@ -137,7 +137,7 @@ function emo (message) {
 
 function format (place, time, message){
   let picture = emo(message);
-  let checkedTime = time ?? dayjs().format('YYYY-MM-DD HH-mm-ss');
+  let checkedTime = time || dayjs().format('YYYY-MM-DD HH-mm-ss');
   return phrase = picture + " " + place + " " + message + " " + checkedTime;
 }
 
