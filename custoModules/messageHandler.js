@@ -32,16 +32,16 @@ function emo (message) {
 
 
   switch (upperCaseMessage) {
-    case 'DANTE DEAD':
+    case 'DANTEDEAD':
       picture = emoji.skull_and_crossbones;
       break;
-    case 'DANTE ALIVE':
+    case 'DANTEALIVE':
       picture = emoji.high_brightness;
       break;
-    case 'DJ IN DA HOUSE':
+    case 'DJINDAHOUSE':
       picture = emoji.rainbow-flag;
       break;
-    case 'DJ GO HOME':
+    case 'DJGOHOME':
       picture = emoji.taxi;
       break
     case 'ALARM:NO SOUND':
