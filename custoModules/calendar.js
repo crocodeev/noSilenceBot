@@ -62,16 +62,16 @@ function getEvents(config,when,where) {
       } else {
         switch (where) {
           case "spb":
-          bot.sendMessage(settings.spbChatID, message);
+          bot.sendMessage(settings.chatID, message);
           break;
           case "msk":
-          bot.sendMessage(settings.mskChatID, message);
+          bot.sendMessage(settings.chatID, message);
           case "duty":
-          bot.sendMessage(settings.spbChatID, message);
-          bot.sendMessage(settings.mskChatID, message);
+          bot.sendMessage(settings.chatID, message);
+          bot.sendMessage(settings.chatID, message);
           break;
           default:
-          bot.sendMessage(settings.testChatID, message);
+          bot.sendMessage(settings.chatID, message);
         }
       }
     }

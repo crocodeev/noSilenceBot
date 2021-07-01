@@ -12,17 +12,15 @@ const {Router} = require('express');
 const router = Router();
 
 router.get('/spb/', (req,res) => {
-  res.send("sended to spb chat");
+  res.send("sended to chat");
   let message = messageHandler.format(req.query.name, req.query.date, req.query.music);
-  bot.sendMessage(settings.spbChatID, message);
-  //bot.sendMessage(settings.hitchChatID, message);
+  bot.sendMessage(settings.chatID, message);
 })
 
 router.get('/msk/', (req,res) => {
-  res.send("sended to msk chat");
+  res.send("sended to chat");
   let message = messageHandler.format(req.query.name, req.query.date, req.query.music);
-  bot.sendMessage(settings.mskChatID, message);
-  //bot.sendMessage(settings.hitchChatID, message);
+  bot.sendMessage(settings.chatID, message);
 })
 
 //post
@@ -35,8 +33,7 @@ router.post('/mediawiki/', (req, res)=>{
     res.send("nothing to send");
   }else{
     let message = messageHandler.formatMediaWiki(req.body.summary, req.body.articleTitle, req.body.author);
-    bot.sendMessage(settings.mskChatID, message);
-    bot.sendMessage(settings.spbChatID, message);
+    bot.sendMessage(settings.chatID, message);
 
     res.send("sended to telegram");
   }
@@ -48,7 +45,7 @@ router.post('/screenshotSPB/', upload.single('screenshot'), (req,res) => {
 
   let screenshot = req.file.buffer;
 
-  bot.sendPhoto(settings.spbChatID, screenshot, {caption: message});
+  bot.sendPhoto(settings.chatID, screenshot, {caption: message});
 
 	res.send("sended");
 })
@@ -59,7 +56,7 @@ router.post('/screenshotMSK/', upload.single('screenshot'), (req,res) => {
 
   let screenshot = req.file.buffer;
 
-  bot.sendPhoto(settings.mskChatID, screenshot, {caption: message});
+  bot.sendPhoto(settings.chatID, screenshot, {caption: message});
 
 	res.send("sended");
 })
