@@ -29,11 +29,10 @@ router.post('/spb/', (req,res) => {
   //bot.sendMessage(settings.hitchChatID, message);
 })
 
-router.get('/msk/', (req,res) => {
+router.post('/msk/', (req,res) => {
   res.send("sended to msk chat");
-  let message = messageHandler.format(req.query.name, req.query.date, req.query.music);
+  let message = messageHandler.formatPhone(req.body.phone);
   bot.sendMessage(settings.mskChatID, message);
-  //bot.sendMessage(settings.hitchChatID, message);
 })
 
 

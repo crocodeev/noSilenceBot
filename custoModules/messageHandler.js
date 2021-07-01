@@ -1,4 +1,5 @@
 const emoji = require('node-emoji').emoji;
+const dayjs = require('dayjs');
 
 
 /*
@@ -11,25 +12,38 @@ Description of handled messages:
 
 function emo (message) {
 
+  let upperCaseMessage = message.toUpperCase()
   let picture = null;
   //quick fix for incorrect message enter
   const noSoundRegExp = /(no)(\s+)(sound)/i
   const okSoundRegExp = /(sound)(\s+)(ok)/i
 
-  if(noSoundRegExp.test(message)){
-    console.log(message, "SOS");
+  if(noSoundRegExp.test(upperCaseMessage)){
+    console.log(upperCaseMessage, "SOS");
     picture = emoji.sos;
     console.log(picture);
     return picture;
-  }else if(okSoundRegExp.test(message)){
-    console.log(message, "OK");
+  }else if(okSoundRegExp.test(upperCaseMessage)){
+    console.log(upperCaseMessage, "OK");
     picture = emoji.loud_sound;
     console.log(picture);
     return picture;
   }
 
 
-  switch (message) {
+  switch (upperCaseMessage) {
+    case 'DANTEDEAD':
+      picture = emoji.skull_and_crossbones;
+      break;
+    case 'DANTEALIVE':
+      picture = emoji.high_brightness;
+      break;
+    case 'DJINDAHOUSE':
+      picture = emoji.rainbow-flag;
+      break;
+    case 'DJGOHOME':
+      picture = emoji.taxi;
+      break
     case 'ALARM:NO SOUND':
       picture = emoji.sos;
       break;
@@ -123,7 +137,8 @@ function emo (message) {
 
 function format (place, time, message){
   let picture = emo(message);
-  return phrase = picture + " " + place + " " + message + " " + time;
+  let checkedTime = time || dayjs().format('YYYY-MM-DD HH-mm-ss');
+  return phrase = picture + " " + place + " " + message + " " + checkedTime;
 }
 
 function formatMediaWiki (summary, articleTitle, author){
@@ -161,7 +176,13 @@ function formatCalendar (when, eventObject) {
 
 }
 
+function formatPhone (phoneNumber){
+  let picture = emoji.telephone;
+  return phrase = picture + " missed call from: " + phoneNumber;
+}
+
 module.exports.emo = emo;
 module.exports.format = format;
 module.exports.formatCalendar = formatCalendar;
 module.exports.formatMediaWiki = formatMediaWiki;
+module.exports.formatPhone = formatPhone;
